@@ -1,0 +1,1 @@
+body,html{margin:0;height:100%}body{transition-duration:.3s;background-color:#3f3f3f;font-family:'Courier New',monospace;display:flex;justify-content:center;align-items:center;text-align:center}p{color:#bfbfbf}label:hover{color:#bfbfbf}input[type=file]{display:none}label{color:#7f7f7f}.highlight{background-color:hsl(0,0%,22.5%);filter:brightness(75%)}
