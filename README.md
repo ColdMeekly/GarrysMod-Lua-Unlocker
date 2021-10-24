@@ -18,6 +18,27 @@ Garry's Mod strips powerful debugging functions from Lua to prevent abuse. This 
 4.  Rename the unlocked file to `lua_shared.dll` and place in same location as original.
 5. Enjoy forbidden functions!
 
+## How it works
+The website finds the following facepunch code which is responsible for removing the forbidden functions and skips over it to ignore facepunch's modification:
+
+```c++
+lua_getfield(L, LUA_GLOBALSINDEX, "debug");
+
+lua_pushnil(L);
+lua_setfield(L, -2, "setlocal");
+
+lua_pushnil(L);
+lua_setfield(L, -2, "setupvalue");
+
+lua_pushnil(L);
+lua_setfield(L, -2, "upvalueid");
+
+lua_pushnil(L);
+lua_setfield(L, -2, "upvaluejoin");
+
+lua_settop(L, -2);
+```
+
 ## Note:
 Some servers check for presence of these functions, make sure to hide them to avoid being banned.
 
