@@ -35,9 +35,13 @@ jobs:
         uses: actions/setup-dotnet@v1.8.2
 
       # Runs a single command using the runners shell
-      - name: Unzip DepotDownloader
-        run: sudo apt install unzip && unzip -d depotdownloader *.zip && dotnet depotdownloader/DepotDownloader.dll
+      - name: Download latest lua_shared.dll
+        run: sudo apt install unzip &&
+          unzip -d depotdownloader *.zip &&
+          echo garrysmod/bin/lua_shared.dll > files.txt &&
+          dotnet depotdownloader/DepotDownloader.dll -app 4000 -depot 4002 -filelist files.txt -username ${{ secrets.GMOD_STEAM_USER }} -password ${{ secrets.GMOD_STEAM_PASS }}
       
-      
+      - name: List files
+        run: ls depotdownloader && find depotdownloader -name lua_shared.dll
         
       
