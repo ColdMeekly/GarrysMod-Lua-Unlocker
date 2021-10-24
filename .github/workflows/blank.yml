@@ -42,6 +42,6 @@ jobs:
           dotnet depotdownloader/DepotDownloader.dll -app 4000 -depot 4002 -filelist files.txt -username ${{ secrets.GMOD_STEAM_USER }} -password ${{ secrets.GMOD_STEAM_PASS }}
       
       - name: List files
-        run: ls depotdownloader && find depotdownloader -name lua_shared.dll
+        run: ls && find . -name lua_shared.dll
         
       
