@@ -2,6 +2,8 @@ Gmod Lua Unlocker
 ===========
 Website: https://glu.cldmk.ly/
 
+Super cool feature: Can be used offline after visiting once!
+
 Garry's Mod strips powerful debugging functions from Lua to prevent abuse. This project undoes that, allowing previously removed functions to be used again.
 
 ## Restored functions
